@@ -1,0 +1,9 @@
+actions:
+  - name: Starter application is serving content
+    bashTest:
+      script: curl -f "http://${APP_INSTANCE_NAME}-starter-svc.${NAMESPACE}.svc.cluster.local"
+      expect:
+        stdout:
+          contains: Deepgram
+        exitCode:
+          equals: 0

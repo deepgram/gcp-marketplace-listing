@@ -1,0 +1,43 @@
+x-google-marketplace:
+  schemaVersion: v2
+
+  applicationApiVersion: v1beta1
+
+  publishedVersion: 1.0.0
+  publishedVersionMetadata:
+    releaseNote: >-
+      A regular update.
+    releaseTypes:
+      - Feature
+    recommended: false
+
+  clusterConstraints:
+    resources:
+      - replicas: 1
+        requests:
+          cpu: 100m
+          memory: 100Mi
+
+  images:
+    "":
+      properties:
+        deepgramSelfHostedStarter.image.repo:
+          type: REPO_WITH_REGISTRY
+          default: gcr.io/deepgram-public/deepgram-self-hosted-starter
+        deepgramSelfHostedStarter.image.tag:
+          type: TAG
+          default: 1.0.0
+
+properties:
+  name:
+    type: string
+    x-google-marketplace:
+      type: NAME
+  namespace:
+    type: string
+    x-google-marketplace:
+      type: NAMESPACE
+
+required:
+  - name
+  - namespace

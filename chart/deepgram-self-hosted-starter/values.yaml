@@ -1,0 +1,4 @@
+deepgramSelfHostedStarter:
+  image:
+    repo: null
+    tag: null
