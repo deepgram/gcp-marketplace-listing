@@ -26,7 +26,12 @@ x-google-marketplace:
           default: gcr.io/deepgram-public/deepgram-self-hosted-starter
         deepgramSelfHostedStarter.image.tag:
           type: TAG
-          default: 1.0.0
+          default: 1.1.0
+    ubbagent:
+      properties:
+        ubbagentFull:
+          type: FULL
+          default: gcr.io/cloud-marketplace-tools/metering/ubbagent:latest
 
 properties:
   name:
@@ -37,6 +42,10 @@ properties:
     type: string
     x-google-marketplace:
       type: NAMESPACE
+  usageReportingSecret:
+    type: string
+    x-google-marketplace:
+      type: REPORTING_SECRET
 
 required:
   - name
