@@ -37,6 +37,15 @@ properties:
     type: string
     x-google-marketplace:
       type: NAMESPACE
+  usageReportingSecret:
+    type: string
+    x-google-marketplace:
+      type: REPORTING_SECRET
+  imageUbbagent:
+    type: string
+    default: gcr.io/cloud-marketplace-tools/metering/ubbagent
+    x-google-marketplace:
+      type: IMAGE
 
 required:
   - name

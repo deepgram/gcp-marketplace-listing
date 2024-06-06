@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-ubbagent-config
+data:
+  config.yaml: |
+    identities:
+    - name: gcp
+      gcp:
+        encodedServiceAccountKey: $AGENT_ENCODED_KEY
+
+    metrics:
+    - name: hourley_based_pricing 
+      type: int
+      endpoints:
+      - name: on_disk
+      - name: servicecontrol
+      passthrough: {}
+
+    endpoints:
+    - name: on_disk
+      disk:
+        reportDir: /var/lib/ubbagent/reports
+        expireSeconds: 3600
+    - name: servicecontrol
+      servicecontrol:
+        identity: gcp
+        serviceName: deepgram-language-ai.endpoints.deepgram-public.cloud.goog
+        consumerId: $AGENT_CONSUMER_ID
+
+    sources:
+    - name: instance_time_heartbeat
+      heartbeat:
+        metric: hourly_based_pricing
+        intervalSeconds: 60
+        value:
+          int64Value: 60
