@@ -26,3 +26,27 @@ spec:
         readinessProbe:
           tcpSocket:
             port: 80
+      - name: ubbagent
+        image: {{ .Values.ubbagentFull }}
+        env:
+        - name: AGENT_CONFIG_FILE
+          value: "/etc/ubbagent/config.yaml"
+        - name: AGENT_LOCAL_PORT
+          value: "4567"
+        - name: AGENT_ENCODED_KEY
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.usageReportingSecret }}
+              key: reporting-key
+        - name: AGENT_CONSUMER_ID
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.usageReportingSecret }} 
+              key: consumer-id
+        volumeMounts:
+        - name: ubbagent-config
+          mountPath: /etc/ubbagent
+      volumes:
+      - name: ubbagent-config
+        configMap:
+          name: {{ .Release.Name}}-ubbagent-config
