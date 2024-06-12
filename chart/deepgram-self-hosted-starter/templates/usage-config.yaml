@@ -25,7 +25,7 @@ data:
     - name: servicecontrol
       servicecontrol:
         identity: gcp
-        serviceName: deepgram-language-ai.endpoints.deepgram-public.cloud.goog
+        serviceName: deepgram-language-ai.endpoints.deepgram-public.cloud.google.com
         consumerId: $AGENT_CONSUMER_ID
 
     sources:

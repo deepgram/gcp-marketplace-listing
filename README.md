@@ -34,7 +34,7 @@ Retrieve the Deepgram Self-Hosted Starter image references:
 
 ```bash
 export IMAGE_REPO=gcr.io/deepgram-public/deepgram-self-hosted-starter
-export IMAGE_TAG=1.1.0
+export IMAGE_TAG=1.1.1
 ```
 
 Install the app with Helm:
