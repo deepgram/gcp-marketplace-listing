@@ -34,4 +34,4 @@ data:
         metric: Hourly_Based_Pricing
         intervalSeconds: 60
         value:
-          int64Value: 60
+          int64Value: 3600
