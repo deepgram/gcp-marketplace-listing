@@ -28,3 +28,5 @@ spec:
     kind: Deployment
   - group: core
     kind: Service
+  - group: core
+    kind: ConfigMap
