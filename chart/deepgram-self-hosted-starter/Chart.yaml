@@ -1,8 +1,8 @@
 apiVersion: v2
 name: deepgram-self-hosted-starter
 type: application
-version: 1.1.0
-appVersion: 1.1.0
+version: 1.1.4
+appVersion: 1.1.4
 description: A Helm chart for running a starter Deepgram application in a self-hosted environment
 sources: ["https://github.com/deepgram/gcp-marketplace-listing"]
 kubeVersion: ">=1.27.0-0"
