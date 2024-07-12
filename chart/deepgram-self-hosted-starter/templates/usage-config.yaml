@@ -32,6 +32,6 @@ data:
     - name: instance_time_heartbeat
       heartbeat:
         metric: Hourly_Based_Pricing
-        intervalSeconds: 60
+        intervalSeconds: 3600
         value:
-          int64Value: 3600
+          int64Value: 1
