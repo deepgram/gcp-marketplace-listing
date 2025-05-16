@@ -29,5 +29,5 @@ COPY --from=build /tmp/test/deepgram-self-hosted-starter.tar.gz /data-test/chart
 COPY --from=build /tmp/apptest/schema.yaml /data-test/
 COPY --from=build /tmp/schema.yaml /data/
 
-ENV WAIT_FOR_READY_TIMEOUT 300
-ENV TESTER_TIMEOUT 60
+ENV WAIT_FOR_READY_TIMEOUT=300
+ENV TESTER_TIMEOUT=60
