@@ -32,6 +32,11 @@ x-google-marketplace:
         ubbagentFull:
           type: FULL
           default: gcr.io/cloud-marketplace-tools/metering/ubbagent:latest
+    testerImage:
+      properties:
+        testerImageFull:
+          type: FULL
+          default: gcr.io/deepgram-public/deepgram-self-hosted-starter/deployer/tester:1.1.7
 
 properties:
   name:
