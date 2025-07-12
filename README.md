@@ -2,16 +2,17 @@
 
 ## Overview
 
-The Deepgram Self-Hosted Google Cloud Platform Starter is a Helm chart for running a starter Deepgram application in a self-hosted environment. It provides a simple way to get started with Deepgram's speech recognition capabilities in your own infrastructure. 
+The Deepgram Self-Hosted Google Cloud Platform Starter is a Helm chart for running a starter Deepgram application in a self-hosted environment. It provides a simple way to get started with Deepgram's speech recognition capabilities in your own infrastructure.
 
 Key features:
+
 - Starter web application to be introduced to Deepgram's API
 - Deployment via Helm chart
 - Customizable via Helm chart values
 
 To learn more about deploying Deepgram in a self-hosted environment within GCP, please contact [Deepgram Support](https://deepgram.com/contact-us/).
 
-## One-time Setup 
+## One-time Setup
 
 1. Install [kubectl](https://kubernetes.io/docs/tasks/tools/) and [Helm](https://helm.sh/docs/intro/install/) on the machine where you will deploy the application.
 
@@ -34,7 +35,7 @@ Retrieve the Deepgram Self-Hosted Starter image references:
 
 ```bash
 export IMAGE_REPO=gcr.io/deepgram-public/deepgram-self-hosted-starter
-export IMAGE_TAG=1.1.5
+export IMAGE_TAG=1.1.7
 ```
 
 Install the app with Helm:
@@ -72,7 +73,7 @@ export NEW_IMAGE_TAG=2.0.0
 
 Update the Deployment with the new image:
 
-```bash 
+```bash
 helm upgrade ${APP_INSTANCE_NAME} deepgram/deepgram-self-hosted-starter \
   --namespace ${NAMESPACE} \
   --set deepgramSelfHostedStarter.image.repo=${IMAGE_REPO} \

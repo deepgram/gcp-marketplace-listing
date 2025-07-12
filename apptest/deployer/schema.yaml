@@ -1,6 +1,6 @@
 properties:
   testerImage:
     type: string
-    default: gcr.io/deepgram-public/deepgram-self-hosted-starter/deployer/tester:1.1.5
+    default: gcr.io/deepgram-public/deepgram-self-hosted-starter/deployer/tester:1.1.7
     x-google-property:
       type: IMAGE
