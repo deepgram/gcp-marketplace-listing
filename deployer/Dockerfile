@@ -1,4 +1,4 @@
-FROM marketplace.gcr.io/google/c2d-debian11 AS build
+FROM marketplace.gcr.io/google/c2d-debian11:latest AS build
 
 RUN apt-get update \
   && apt-get upgrade -y \
