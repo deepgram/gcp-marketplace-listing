@@ -35,7 +35,7 @@ Retrieve the Deepgram Self-Hosted Starter image references:
 
 ```bash
 export IMAGE_REPO=gcr.io/deepgram-public/deepgram-self-hosted-starter
-export IMAGE_TAG=1.6.0
+export IMAGE_TAG=1.2.0
 ```
 
 Install the app with Helm:
@@ -68,7 +68,7 @@ The Deepgram Self-Hosted Starter does not persist any data. Backup and restore p
 To update the application with a new image version, set the new tag:
 
 ```bash
-export NEW_IMAGE_TAG=1.6.0
+export NEW_IMAGE_TAG=1.2.0
 ```
 
 Update the Deployment with the new image:
