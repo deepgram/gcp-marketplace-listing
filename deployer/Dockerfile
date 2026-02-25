@@ -1,7 +1,7 @@
 FROM marketplace.gcr.io/google/c2d-debian11:latest AS build
 
 RUN apt-get update \
-  && apt-get upgrade -y \
+  && apt-get dist-upgrade -y \
   && apt-get install -y --no-install-recommends gettext
 
 ADD chart/deepgram-self-hosted-starter /tmp/chart
