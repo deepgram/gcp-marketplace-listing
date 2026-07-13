@@ -1,7 +1,7 @@
-FROM marketplace.gcr.io/google/c2d-debian11 AS build
+FROM marketplace.gcr.io/google/c2d-debian11:latest AS build
 
 RUN apt-get update \
-  && apt-get upgrade -y \
+  && apt-get dist-upgrade -y \
   && apt-get install -y --no-install-recommends gettext
 
 ADD chart/deepgram-self-hosted-starter /tmp/chart
@@ -24,6 +24,7 @@ RUN cat /tmp/apptest/schema.yaml > /tmp/apptest/schema.yaml.new \
   && mv /tmp/apptest/schema.yaml.new /tmp/apptest/schema.yaml
 
 FROM gcr.io/cloud-marketplace-tools/k8s/deployer_helm:latest
+RUN apt-get update && apt-get dist-upgrade -y && rm -rf /var/lib/apt/lists/*
 COPY --from=build /tmp/deepgram-self-hosted-starter.tar.gz /data/chart/
 COPY --from=build /tmp/test/deepgram-self-hosted-starter.tar.gz /data-test/chart/
 COPY --from=build /tmp/apptest/schema.yaml /data-test/
