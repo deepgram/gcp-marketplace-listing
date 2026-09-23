@@ -1,8 +1,8 @@
 FROM marketplace.gcr.io/google/c2d-debian11:latest AS build
 
-RUN apt-get update \
-  && apt-get dist-upgrade -y \
-  && apt-get install -y --no-install-recommends gettext
+# No apt here: this stage only packs the chart tarballs copied out below, so
+# its packages never ship. Debian 11 is EOL and its pool 404s, which broke the
+# build; the shipping stage below still runs dist-upgrade.
 
 ADD chart/deepgram-self-hosted-starter /tmp/chart
 RUN cd /tmp && tar -czvf /tmp/deepgram-self-hosted-starter.tar.gz chart
